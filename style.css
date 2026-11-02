@@ -1,0 +1,136 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  gap: 1em;
+  width: 100%;
+   place-items: center;
+}
+.grid-container  {
+  display: grid;
+  /* place-items: center; */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+  width: 100%;
+  padding: 1em;
+  grid-template-rows: auto 1fr auto;}
+
+
+/* .grid-container .element-two  {
+display: grid;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+
+} */
+ .grid-container .card {
+  background-color: #f2f2f2;
+  padding: 20px;
+  place-items: center;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0; 
+ }
+ .container div.header {
+  grid-area: header;
+  text-align: center;
+}
+.meta-card {
+  display: grid;
+  /* Every detail row takes up exactly 36px */
+  grid-template-rows: repeat(auto-fit, minmax(36px, auto));
+  row-gap: 8px;
+}
+
+.meta-card .row {
+  display: grid;
+  grid-template-columns: 100px 1fr; /* Fixed key width, auto-filling value */
+  align-items: center;
+}
+
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}.header.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .header.container nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+
+
+/* For Tablets and Medium Screens  */
+@media screen and (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .grid-container {
+    gap: 0.8em;
+  }
+}
+
+/* For Mobile Devices and Small Screens  */
+@media screen and (max-width: 768px) {
+  
+  /* Stack header text and navigation vertically */
+  .header.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .header.container nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* Adjust grid items to full width on small screens a single column layout */
+  .grid-container {
+    grid-template-columns: 1fr; 
+    gap: 1em;
+  }
+
+  .element-one img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .grid-container .card {
+    padding: 15px;
+  }
+  
+  div.grid-container:not([class*=" "]) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* For Extra Small Phones */
+@media screen and (max-width: 480px) {
+  .header.container h1 {
+    font-size: 1.5rem;
+  }
+
+  .grid-container .card {
+    padding: 10px;
+  }
+}
